@@ -19,4 +19,6 @@ PIL(PILLOW) version 5
 
 --install: pip install Pillow(You may have to run this command as an Administrator)
 
-The Image files are only in "Poker_Bridge.rar". It also contains the whole game.
+The Image files are only in "Poker_Bridge.rar". Make sure to download it.
+
+It also contains the whole game.
