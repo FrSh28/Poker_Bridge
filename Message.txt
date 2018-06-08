@@ -1,0 +1,44 @@
+Message list:
+
+"connected" (c->s)
+	client connected
+"setplayer" (c->s)
+	client set playername & password
+	"(playerID)" (c->s)
+	"(name) (pass)" (c->s)
+"cardinfo" (s->c)
+	server send init cardinfo
+	"(playerID)" (s->c)
+	"(suit) (num)" (s->c) * n
+
+"calltheking" (c->s)
+	client call the king
+	"(playerID)" (s->c)
+	"(pass)" (c->s)
+	"True" || "False" (s->c)
+	"(num) (king suit)" || "pass" (c->s)
+"setOK" (s->c)
+	server gaming ready
+"gaming" (c->s)
+	{
+		client gaming start
+		"(playerID)" (s->c)
+		"(pass)" (c->s)
+		"True" || "False" (s->c)
+		"(suit) (num)" (s->c) * n
+		"ends" (s->c)
+			no more available card
+		"(suit) (num)" (c->s)
+			player play card
+	}*4
+	"playerID" (s->c)
+		round winner
+"score" (s->c)
+	"(playerID)"(s->c)
+		winner team(ID = 0 or 1)
+	"(playerID) (tricknum)" (s->c)(ID = 0 or 1)
+	"(playerID) (tricknum)" (s->c)(ID = 0 or 1)
+"playagain"(c->s)
+	playagain
+"restart"
+	restart s & c
