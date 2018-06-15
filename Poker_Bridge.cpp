@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string.h>
 #include <sstream>
+#include <stdlib.h>
 #include "poker.h"
 #include "communicate.h"
 using namespace std;
@@ -65,6 +66,7 @@ bool cmpnum(int num1, int num2)//cardnum1>cardnum2 -> True
 int main()
 {
 	cout<<"Copyright 2018 Yi-Fan Shyu. Some rights reserved.\nCC BY-NC-SA"<<endl;
+	system("pause");
 	//init process
 	GetFullPathName("poker_vpy.py", 100, VpyPath, NULL);
 	strcat(Command, PyPath);

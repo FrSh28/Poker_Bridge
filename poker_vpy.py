@@ -40,7 +40,6 @@ box(pos = (0, -0.02*unit, 0), axis = (0, 0, 1), height = 0.04*unit, length = 1.2
 cylinder(pos = (0, -0.5*unit, 0), axis = (0, 0.03*unit, 0), radius = 0.5*unit, material = materials.wood)
 cylinder(pos = (0, -0.5*unit, 0), axis = (0, 0.48*unit, 0), radius = 0.05*unit, material = materials.wood)
 #cover
-scene.visible = True
 cover = sphere(pos = (0, 0, 0), radius = 0.3*unit, opacity = 0.3, visible = False)
 covercard = sphere(pos = (0, 0, 0), color = color.black, radius = 0.3*unit, visible = True)
 
@@ -189,6 +188,7 @@ while playagain:
                 break
 
     #cover
+    scene.visible = True
     covercard.visible = False
     cover.pos = scene.mouse.camera
     covercard.pos = scene.mouse.camera
