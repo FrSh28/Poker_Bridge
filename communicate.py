@@ -33,11 +33,12 @@ def connect():
     thr_wr.start()
 
 def read():
-    try:
-        mess = inbuf.get(False)
-        return mess
-    except Queue.Empty:
-        pass
+    while True:
+        try:
+            mess = inbuf.get(False)
+            return mess
+        except Queue.Empty:
+            continue
 
 def write(mess):
     if mess != "":

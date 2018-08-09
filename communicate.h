@@ -74,6 +74,7 @@ bool read_from_client(char message[])
 
 void close(bool ClientStart)
 {
+	FlushFileBuffers(wr);
 	//close pipe
 	DisconnectNamedPipe(wr);
 	CloseHandle(wr);
