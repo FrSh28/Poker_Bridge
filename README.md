@@ -3,7 +3,7 @@ Copyright 2018 Yi-Fan Shyu. Some rights reserved.
 
 CC BY-NC-SA
 
-A project that use Pipe to connect C++ &amp; VPython. This allows you to play bridge with simple GUI.
+A project that use Pipe to connect C++ & VPython. It allows you to play bridge with simple GUI.
 
 Requirements:
 
@@ -19,7 +19,7 @@ PIL(PILLOW) version 5
 
 --install: pip install Pillow(You may have to run this command as an Administrator)
 
-The Image files are only in "Poker_Bridge.rar". Make sure to download it.
+The Image files are ONLY in "Poker_Bridge.rar". Make sure you downloaded it.
 
 It also contains the whole game.
 
