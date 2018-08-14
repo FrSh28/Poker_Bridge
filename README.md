@@ -1,9 +1,9 @@
 # Poker_Bridge
-A project that use Pipe to connect C++ &amp; VPython. This allows you to play bridge with simple GUI.
-
 Copyright 2018 Yi-Fan Shyu. Some rights reserved.
 
 CC BY-NC-SA
+
+A project that use Pipe to connect C++ &amp; VPython. This allows you to play bridge with simple GUI.
 
 Requirements:
 
