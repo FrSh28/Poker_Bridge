@@ -22,3 +22,5 @@ PIL(PILLOW) version 5
 The Image files are only in "Poker_Bridge.rar". Make sure to download it.
 
 It also contains the whole game.
+
+Last update:  2018/8/14
