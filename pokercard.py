@@ -27,7 +27,13 @@ def initpoker(gamecenter):
     for csuit in range(4):
         for cnum in range(1, 14):
             cindex = cardindex(csuit, cnum)
-            im = Image.open("CardImage\\poker"+str(cindex)+".tga")
+            try:
+                im = Image.open("CardImage\\poker"+str(cindex)+".tga")
+            except IOError:
+                try:
+                    im = Image.open("..\\CardImage\\poker"+str(cindex)+".tga")
+                except IOError:
+                    print "can't find poker materials(CardImage\pokerXX.tga)"
             tex = materials.texture(data = im, mapping = "sign", interpolate = False)
             cards.append(frame(frame = initcardf, pos = (0, 0, 77.5-cindex*1.5), axis = (0, 0, 1), suit = csuit, num = cnum, belong = initcard,
                                visible = True, edge = [vector(125, 0, 85), vector(-125, 0, 85), vector(125, 0, -85), vector(-125, 0, -85)],
