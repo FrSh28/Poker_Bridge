@@ -68,17 +68,12 @@ int main()
 	cout<<"Copyright 2018 Yi-Fan Shyu. Some rights reserved.\nCC BY-NC-SA"<<endl;
 	system("pause");
 	//init process
-	GetFullPathName("poker_vpy.py", 100, VpyPath, NULL);
-	strcat(Command, PyPath);
-	strcat(Command, " ");
-	strcat(Command, VpyPath);
-	while(!create(Command))
-	{
-		strcpy(Command, "");
+	GetFullPathName("Codes\\poker_vpy.py", 100, VpyPath, NULL);
+	do{
 		while(GetFileAttributes(PyPath) == INVALID_FILE_ATTRIBUTES)
 		{
 			char newpath[100] = "";
-			cout<<"Can't find Python27 or Python27 module Vpython\n"<<"Path: "<<PyPath<<"\n"
+			cout<<"Can't find Python27\n"<<"Path: "<<PyPath<<"\n"
 				<<"Change Path?(y/n)"<<endl;
 			cin>>newpath;
 			if(newpath[0] == 'y' || newpath[0] == 'Y')
@@ -91,20 +86,20 @@ int main()
 		while(GetFileAttributes(VpyPath) == INVALID_FILE_ATTRIBUTES)
 		{
 			char newpath[100] = "";
-			cout<<"Can't find Poker_bridge.exe\n"<<"Path: "<<VpyPath<<"\n"
+			cout<<"Can't find poker_vpy.py or Python27 module Vpython\n"<<"Path: "<<VpyPath<<"\n"
 				<<"Change Path?(y/n)"<<endl;
 			cin>>newpath;
 			if(newpath[0] == 'y' || newpath[0] == 'Y')
 			{
-				cout<<"Enter the path: ";
+				cout<<"Enter new path: ";
 				cin>>newpath;
 				strcpy(VpyPath, newpath);
 			}
 		}
-		strcat(Command, PyPath);
+		strcpy(Command, PyPath);
 		strcat(Command, " ");
 		strcat(Command, VpyPath);
-	}
+	}while(!create(Command));
 	char wrbuf[MaxBuf] = "", rdbuf[MaxBuf] = "";
 	if(!tryread(rdbuf, "connected"))
 		return -1;
